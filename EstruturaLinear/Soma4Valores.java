@@ -1,4 +1,4 @@
-//Problema: Faça um programa que receba quatro números inteiros, calcule e mostre a soma desses números.
+//Problema: Faça um programa que receba quatro números inteiros, calcule e mostre a soma desses números de maneira gráfica.
 
 import javax.swing.JOptionPane;
 
