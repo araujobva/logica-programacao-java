@@ -1,4 +1,5 @@
-/* Problema: Faça um programa que receba o ano de nascimento de uma pessoa e o ano atual, calcule e mostre:
+/* 
+ * Problema: Faça um programa que receba o ano de nascimento de uma pessoa e o ano atual, calcule e mostre:
  * a) A idade dessa pessoa em anos.
  * b) Quantos anos essa pessoa terá em 2050.
  * c) A idade dessa pessoa em meses.
