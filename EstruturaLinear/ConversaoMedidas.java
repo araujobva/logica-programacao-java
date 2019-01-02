@@ -1,4 +1,5 @@
-/* Problema: Sabe-se que:
+/* 
+ * Problema: Sabe-se que:
  * 1 pé = 12 polegadas
  * 1 jarda = 3 pés
  * 1 milha = 1.760 jardas
