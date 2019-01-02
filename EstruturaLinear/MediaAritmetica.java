@@ -1,4 +1,4 @@
-//Problema: Faça um programa que receba três notas, calcule e mostre a média aritmética entre elas.
+//Problema: Faça um programa que receba três notas, calcule e mostre a média aritmética entre elas utilizando JOptionPane.
 
 import javax.swing.JOptionPane;
 
