@@ -1,6 +1,6 @@
 /*
  * Problema: Faça um programa que receba o código correspondente ao cargo de um funcionário e seu salário atual, mostre o cargo, o valor do aumento e seu novo salário. 
- * Os cargos estão abaixo.
+ * Os cargos estão abaixo. NOTA: Se o código digitado não for válido, informe ao usuário.
  * - Código 1, cargo Escrituário, percentual 50%.
  * - Código 2, cargo Secretário, percentual 35%.
  * - Código 3, cargo Caixa, percentual 20%.
