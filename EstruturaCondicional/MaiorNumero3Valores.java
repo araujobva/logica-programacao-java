@@ -1,4 +1,4 @@
-//Problema: Faça um programa que receba três números e mostre o maior.
+//Problema: Crie um programa que receba três números e mostre o maior.
 
 import java.util.Scanner;
 
