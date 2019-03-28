@@ -21,13 +21,13 @@
             op = Integer.parseInt(JOptionPane.showInputDialog("Digite a opcao desejada.\n1 - Volume.\n2 - Canal.\n3 - Consultar volume e canal.\n4 - Para encerrar o programa."));
             switch(op){
                 case 1:
-                    controle.Volume();
+                    controle.volume();
                     break;
                 case 2: 
-                    controle.Canal();
+                    controle.canal();
                     break;
                 case 3:
-                    controle.Consultar();
+                    controle.consultar();
                     break;
                 case 4:
                     //Sai do switch para encerrar o loop.
@@ -38,7 +38,7 @@
          }while(op != 4);
      }
 
-     public void Volume(){
+     public void volume(){
          int op;
          op = Integer.parseInt(JOptionPane.showInputDialog("Digite a opcao desejada.\n1 - Aumentar o volume.\n2 - Diminuir o volume."));
          if(op == 1)
@@ -49,7 +49,7 @@
             JOptionPane.showMessageDialog(null,"Parametro invalido.","Erro!",JOptionPane.ERROR_MESSAGE);
      }
 
-    public void Canal(){
+    public void canal(){
          int op;
          op = Integer.parseInt(JOptionPane.showInputDialog("Digite a opcao desejada.\n1 - Aumentar o canal.\n2 - Diminuir o canal.\n3 - Para inserir um canal especifico."));
          if(op == 1)
@@ -62,7 +62,7 @@
             JOptionPane.showMessageDialog(null,"Parametro invalido.","Erro!",JOptionPane.ERROR_MESSAGE);    
     }
 
-    public void Consultar(){
+    public void consultar(){
         JOptionPane.showMessageDialog(null,"O volume e "+this.volume+"\nO canal e "+this.canal);
     }
 
