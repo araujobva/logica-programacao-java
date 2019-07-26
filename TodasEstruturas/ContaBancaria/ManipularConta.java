@@ -32,7 +32,7 @@ class ManipularConta{
             System.out.println("ERRO! Esta conta nao existe no nosso sistema!");
     }
 
-    public static void excluir(ArrayList<Conta> lista){ //Está dando erro na exclusão de contas.
+    public static void excluir(ArrayList<Conta> lista){
         double menorValor = 0;
         int posMenorValor = 0, j = 0;
         menorValor = lista.get(0).saldo;
