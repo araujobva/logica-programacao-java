@@ -6,13 +6,8 @@
  * NOTA: Não precisa utilizar um banco de dados, utilize apenas a memória DRAM (Memória Principal) para fazer as gravações dos dados temporariamente.
  */
 
- class Main{
-    public static void main(String[] args){
+class Main {
+    public static void main(String[] args) {
         Tela.menu();
     }
- }
-
- //cadastra e-mail com senha e nome
- //logar no e-mail cadastrado
- //depois de logado, ter opções de enviar e-mail (retornar erro se o e-mail do destinatário não existir), ver e-mails recebidos, excluir e-mail recebido, mudar nome e senha da conta
- 
+}
