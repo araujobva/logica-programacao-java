@@ -14,6 +14,14 @@ public class GerenciaConta {
         return true;
     }
 
+    public static boolean validaEmail(String email, ArrayList<Pessoa> listaPessoa) {
+        for(int i = 0; i < listaPessoa.size(); i++) {
+            if(listaPessoa.get(i).getEmail().equals(email))
+                return true;
+        }
+        return false;
+    }
+
     public static void cadastraConta(Pessoa pessoa, ArrayList<Pessoa> listaPessoas) {
         listaPessoas.add(pessoa);
     }
