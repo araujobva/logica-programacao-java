@@ -4,6 +4,8 @@ import java.util.Scanner;
 class Tela {
 
     public static void menu() {
+        Email objMensagem = new Email();
+        objMensagem.idEmail = 0;
         Pessoa pessoa = new Pessoa();
         ArrayList<Pessoa> listaPessoas = new ArrayList<>();
         Scanner read = new Scanner(System.in);
@@ -60,9 +62,12 @@ class Tela {
                                     if (validacaoEmail) {
                                         System.out.print("Digite a mensagem >> ");
                                         mensagemEmail = read.next();
-                                        envioEmail = GerenciaConta.enviarEmail(email, destinatario, mensagemEmail, listaPessoas);
-                                        if(envioEmail)
+                                        envioEmail = GerenciaConta.enviarEmail(objMensagem, email, destinatario, mensagemEmail, listaPessoas);
+                                        if(envioEmail){
                                             System.out.println("********* SUCESSO! E-mail enviado com sucesso!");
+                                            objMensagem = new Email();
+                                            objMensagem.idEmail++;
+                                        }
                                         else 
                                             System.out.println("********* ERRO! Erro ao enviar o e-mail!");
                                     } else {

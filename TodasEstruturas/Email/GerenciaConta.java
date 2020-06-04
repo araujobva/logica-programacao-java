@@ -34,13 +34,12 @@ public class GerenciaConta {
         return false;
     }
 
-    public static boolean enviarEmail(String emailRemetente, String destinatario, String mensagem, ArrayList<Pessoa> listaPessoas) {
-        Email mensagemObj = new Email();
-        mensagemObj.emailRemetente = emailRemetente;
-        mensagemObj.mensagem = mensagem;
+    public static boolean enviarEmail(Email objEmail, String emailRemetente, String destinatario, String mensagem, ArrayList<Pessoa> listaPessoas) {
+        objEmail.emailRemetente = emailRemetente;
+        objEmail.mensagem = mensagem;
         for(int i = 0; i < listaPessoas.size(); i++) {
             if(destinatario.equals(listaPessoas.get(i).getEmail())) {
-                listaPessoas.get(i).listaEmails.add(mensagemObj);
+                listaPessoas.get(i).listaEmails.add(objEmail);
                 return true;
             }
         }
@@ -52,6 +51,7 @@ public class GerenciaConta {
             if(emailUsuarioLogado.equals(listaPessoas.get(i).getEmail())) {
                 for(int j = 0; j < listaPessoas.get(i).listaEmails.size(); j++) {
                     System.out.println("******************************************************************");
+                    System.out.println("ID E-mail: "+listaPessoas.get(i).listaEmails.get(j).idEmail);
                     System.out.println("E-mail remetente: "+listaPessoas.get(i).listaEmails.get(j).emailRemetente);
                     System.out.println("Mensagem: "+listaPessoas.get(i).listaEmails.get(j).mensagem);
                     System.out.println("******************************************************************");
