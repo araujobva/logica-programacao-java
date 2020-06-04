@@ -9,8 +9,7 @@ class Tela {
         Scanner read = new Scanner(System.in);
         String email, senha, mensagemEmail, destinatario;
         byte op;
-        boolean validacao, controleWhile = true, controleWhile2 = true, validacaoEmail = false;
-        int i = 0;
+        boolean validacao, validacao2, controleWhile = true, controleWhile2 = true, validacaoEmail = false, envioEmail = false;
         do {
             System.out.println("===================================================");
             System.out.println("1 - Para cadastrar uma conta.");
@@ -40,12 +39,12 @@ class Tela {
                     email = read.next();
                     System.out.print("Digite a senha >> ");
                     senha = read.next();
-                    validacao = GerenciaConta.validaUsuario(email, senha, listaPessoas);
+                    validacao2 = GerenciaConta.validaUsuario(email, senha, listaPessoas);
                     do {
-                        if (validacao) {
+                        if (validacao2) {
                             System.out.println("===================================================");
                             System.out.println("********* SUCESSO! Login efetuado! Bem Vindo " + email);
-                            System.out.println("1 - Para enviar um e-mail"); // Retornar um erro se o e-mail do destinatário não existir.
+                            System.out.println("1 - Para enviar um e-mail"); 
                             System.out.println("2 - Para ver e-mails");
                             System.out.println("3 - Excluir e-mail recebido");
                             System.out.println("4 - Para mudar o nome da conta");
@@ -61,12 +60,18 @@ class Tela {
                                     if (validacaoEmail) {
                                         System.out.print("Digite a mensagem >> ");
                                         mensagemEmail = read.next();
-                                        //Criar método para enviar o e-mail.
+                                        envioEmail = GerenciaConta.enviarEmail(email, destinatario, mensagemEmail, listaPessoas);
+                                        if(envioEmail)
+                                            System.out.println("********* SUCESSO! E-mail enviado com sucesso!");
+                                        else 
+                                            System.out.println("********* ERRO! Erro ao enviar o e-mail!");
                                     } else {
-                                        System.out.println("********* ERRO! Este e-mail/destinatario não existe!");
+                                        System.out.println("********* ERRO! Este e-mail/destinatario nao existe!");
                                     }
                                     break;
                                 case 2:
+                                    GerenciaConta.listaEmails(email, listaPessoas);
+                                    break;
                                 case 3:
                                 case 4:
                                 case 5:
@@ -82,12 +87,13 @@ class Tela {
                             controleWhile2 = false;
                         }
                     } while (controleWhile2);
+                    controleWhile2 = true; 
                     break;
                 case 3:
                     controleWhile = false;
                     break;
                 default:
-                    System.out.println("ERRO! Opção inválida!");
+                    System.out.println("ERRO! Opcao invalida!");
             }
 
         } while (controleWhile);

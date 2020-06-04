@@ -5,7 +5,7 @@ class Pessoa {
     private String nome;
     private String senha;
     private String email;
-    ArrayList<String> listaMensagem = new ArrayList<>();
+    ArrayList<Email> listaEmails = new ArrayList<>();
 
     public String getNome() {
         return this.nome;
@@ -29,14 +29,6 @@ class Pessoa {
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public ArrayList<String> getMensagem() {
-        return this.listaMensagem;
-    }
-
-    public void setMensagem(String mensagem) {
-        this.listaMensagem.add(mensagem);
     }
 
 }
