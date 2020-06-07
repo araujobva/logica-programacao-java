@@ -15,8 +15,8 @@ public class GerenciaConta {
     }
 
     public static boolean validaEmail(String email, ArrayList<Pessoa> listaPessoa) {
-        for(int i = 0; i < listaPessoa.size(); i++) {
-            if(listaPessoa.get(i).getEmail().equals(email))
+        for (int i = 0; i < listaPessoa.size(); i++) {
+            if (listaPessoa.get(i).getEmail().equals(email))
                 return true;
         }
         return false;
@@ -34,11 +34,12 @@ public class GerenciaConta {
         return false;
     }
 
-    public static boolean enviarEmail(Email objEmail, String emailRemetente, String destinatario, String mensagem, ArrayList<Pessoa> listaPessoas) {
+    public static boolean enviarEmail(Email objEmail, String emailRemetente, String destinatario, String mensagem,
+            ArrayList<Pessoa> listaPessoas) {
         objEmail.emailRemetente = emailRemetente;
         objEmail.mensagem = mensagem;
-        for(int i = 0; i < listaPessoas.size(); i++) {
-            if(destinatario.equals(listaPessoas.get(i).getEmail())) {
+        for (int i = 0; i < listaPessoas.size(); i++) {
+            if (destinatario.equals(listaPessoas.get(i).getEmail())) {
                 listaPessoas.get(i).listaEmails.add(objEmail);
                 return true;
             }
@@ -47,17 +48,46 @@ public class GerenciaConta {
     }
 
     public static void listaEmails(String emailUsuarioLogado, ArrayList<Pessoa> listaPessoas) {
-        for(int i = 0; i < listaPessoas.size(); i++) {
-            if(emailUsuarioLogado.equals(listaPessoas.get(i).getEmail())) {
-                for(int j = 0; j < listaPessoas.get(i).listaEmails.size(); j++) {
+        for (int i = 0; i < listaPessoas.size(); i++) {
+            if (emailUsuarioLogado.equals(listaPessoas.get(i).getEmail())) {
+                for (int j = 0; j < listaPessoas.get(i).listaEmails.size(); j++) {
                     System.out.println("******************************************************************");
-                    System.out.println("ID E-mail: "+listaPessoas.get(i).listaEmails.get(j).idEmail);
-                    System.out.println("E-mail remetente: "+listaPessoas.get(i).listaEmails.get(j).emailRemetente);
-                    System.out.println("Mensagem: "+listaPessoas.get(i).listaEmails.get(j).mensagem);
+                    System.out.println("E-mail remetente: " + listaPessoas.get(i).listaEmails.get(j).emailRemetente);
+                    System.out.println("Mensagem: " + listaPessoas.get(i).listaEmails.get(j).mensagem);
                     System.out.println("******************************************************************");
                 }
             }
         }
+    }
+
+    public static boolean excluirConta(String contaLogada, ArrayList<Pessoa> listaPessoa) {
+        for(int i = 0; i < listaPessoa.size(); i++) {
+            if(contaLogada.equals(listaPessoa.get(i).getEmail())) {
+                listaPessoa.remove(i);
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public static boolean mudarEmail(String novoEmail, ArrayList<Pessoa> listaPessoas, String emailUsuarioLogado) {
+        for(int i = 0; i < listaPessoas.size(); i++) {
+            if(emailUsuarioLogado.equals(listaPessoas.get(i).getEmail())) {
+                listaPessoas.get(i).setEmail(novoEmail);
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public static boolean mudarSenha(String novaSenha, String emailUsuarioLogado, ArrayList<Pessoa> listaPessoas) {
+        for(int i = 0; i < listaPessoas.size(); i++) {
+            if(listaPessoas.get(i).getEmail().equals(emailUsuarioLogado)) {
+                listaPessoas.get(i).setSenha(novaSenha);
+                return true;
+            }
+        }
+        return false;
     }
 
 }
